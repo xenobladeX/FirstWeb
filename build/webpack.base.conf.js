@@ -95,9 +95,9 @@ module.exports = {
 			filename: 'css/[name].[hash:8].min.css',
 		}),
 		// 消除冗余的css代码
-		// new purifyCssWebpack({
-		// 	paths: glob.sync(path.join(__dirname, "../src/pages/*/*.html"))
-		// }),
+		new purifyCssWebpack({
+			paths: glob.sync(path.join(__dirname, "../src/pages/*/*.html"))
+		}),
 
 	],
 	// webpack4里面移除了commonChunksPulgin插件，放在了config.optimization里面,提取js， vendor名字可改

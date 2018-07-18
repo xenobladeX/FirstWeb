@@ -1,0 +1,139 @@
+
+@import 'normal.scss';
+
+// 头部
+
+header {
+    width: 100%;
+    .top {
+        line-height: 3rem;
+        padding: 0 1.5rem;
+        color: #fff;
+        background: #555;
+        border-bottom: 1px #ecc000 solid;
+        .tel {
+            float: left;
+        }
+        ul {
+            text-align: right;
+            li {
+                display: inline-block;
+                & + li {
+                    border-left: 1px solid #999;
+                    margin-left: -3px;
+                }
+                a {
+                    display: inline-block;
+                    padding: 0 1.5rem;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .main {
+        padding: 0;
+        .brand {
+            float: left;
+            padding: 1rem 1.5rem;
+        }
+        ul {
+            text-align: right;
+            li {
+                display: inline-block;
+                border-left: 1px solid #f0ede9;
+                a {
+                    display: inline-block;
+                    padding: 0 3rem;
+                    line-height: 5.5rem;
+                    font-size: 1.6rem;
+                    font-weight: bold;
+                    color: #7c7a65;
+                    text-decoration: none;
+                    &:hover,
+                    &:active {
+                        color: #ffb300;
+                        background-color: #f8f6f1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+// 网站主要内容
+.container {
+    width: 100%;
+}
+
+// 底部导航
+
+footer {
+    width: 100%;
+    padding: 3rem 0 5rem;
+    background-color: #ededed;
+    ul {
+        text-align: center;
+        li {
+            display: inline-block;
+            .icon {
+                display: inline-block;
+                text-indent: -999rem;
+                margin-right: 1.5rem;
+                background: url(https://i.alipayobjects.com/e/201307/jebmKcbrh.png) no-repeat;
+                background-size: 466px 447px;
+                overflow: hidden;
+
+                &.icon-zfywxk {
+                    width: 38px;
+                    height: 27px;
+                    background-position: -369px -45px;
+                }
+
+                &.icon-pcirk {
+                    width: 78px;
+                    height: 27px;
+                    background-position: -110px -96px;
+                }
+
+                &.icon-visayz {
+                    width: 36px;
+                    height: 27px;
+                    background-position: -426px -90px;
+                }
+
+                &.icon-vsjmfw {
+                    width: 63px;
+                    height: 27px;
+                    background-position: -401px -186px;
+                }
+
+                &.icon-wlgs {
+                    width: 22px;
+                    height: 27px;
+                    background-position: -48px -48px;
+                }
+
+                &.icon-rzcx {
+                    width: 75px;
+                    height: 27px;
+                    background-position: 0px -320px;
+                }
+
+                &.icon-gs {
+                    width: 30px;
+                    height: 30px;
+                    margin-right: 0;
+                    background: url(https://os.alipayobjects.com/rmsportal/lybcjqloSPjMAFg.png) no-repeat;
+                    background-size: 30px;
+                }
+            }
+        }
+    }
+    p {
+        text-align: center;
+        color: #999;
+    }
+}

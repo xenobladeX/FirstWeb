@@ -1,2 +1,4 @@
-import "./index.scss";
+
+import './index.scss';
+
 console.log('login');
