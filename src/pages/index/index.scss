@@ -6,22 +6,44 @@
 .transaction {
     width: 100%;
     background-color: #7c7365;
+    @include media-breakpoint-down(sm) {
+        padding: 0.5rem 0;
+    }
 }
 
 .trans-content {
     max-width: 90%;
     margin: 0 auto;
     font-size: 1.5rem;
+    @include media-breakpoint-down(sm) {
+        text-align: center;
+    }
 }
 
 .trans-data {
     float: left;
     padding: 1rem;
     text-align: left;
+    @include media-breakpoint-down(md) {
+        padding: 1rem 0.5rem;
+    }
+    @include media-breakpoint-down(sm) {
+        float: none;
+        text-align: center;
+        padding: 0;
+    }
+
     span {
         display: inline-block;
         line-height: 3rem;
         color: #fff;
+        @include media-breakpoint-down(md) {
+            font-size: 1.2rem;
+        }
+        @include media-breakpoint-down(sm) {
+
+        }
+
         &.trans-money {
             font-size: 2.2rem;
             color: #ff9900;
@@ -31,17 +53,31 @@
             border-radius: 3px;
             background-color: rgba($color: #fff, $alpha: 0.9);
             box-shadow: 1px 2px 1px #333 inset;
+            @include media-breakpoint-down(md) {
+                font-size: 1.6rem;
+                margin: 0;
+                padding: 0;
+                letter-spacing: inherit;
+                box-shadow: none;
+                background: transparent;
+            }
         }
     }
 }
 
 .trans-report {
     text-align: right;
+    @include media-breakpoint-down(sm) {
+        text-align: center;
+    }
     a {
         display: inline-block;
         padding: 1rem;
         line-height: 3rem;
         color: #fff;
+        @include media-breakpoint-down(sm) {
+            padding: 0;
+        }
     }
 }
 
@@ -64,9 +100,325 @@
         font-size: 1.4rem;
         background-color: #fff;
         box-shadow: 0 0 4px #ccc;
-
         &+.item {
             margin-left: 1.5rem;
         }
+        @include media-breakpoint-down(sm) {
+            display: block;
+            width: auto;
+            &+.item {
+                margin: 2rem 0;
+            }
+        }
+
+        h3 {
+            display: inline-block;
+            width: 40%;
+            margin: 0;
+            padding: 0;
+            vertical-align: top;
+            font-size: 3.3rem;
+            text-align: center;
+            color: #ff9900;
+            @include media-breakpoint-only(md) {
+                display: block;
+                width: auto;
+            }
+        }
+
+        p {
+            display: inline-block;
+            width: 55%;
+            margin: 0;
+            padding: 0;
+            color: #999;
+            @include media-breakpoint-only(md) {
+                display: block;
+                width: auto;
+                text-align: center;
+            }
+        }
     }
 }
+
+// 最新公告
+
+.notice {
+    width: 90%;
+    margin: 2rem auto;
+    font-size: 1.4rem;
+    line-height: 3rem;
+    background-color: #fff;
+    box-shadow:  0 0 4px #ccc;
+    @include media-breakpoint-down(sm) {
+        margin: 1rem auto;
+        font-size: 1.2rem;
+    }
+    a {
+        float: left;
+        display: inline-block;
+        width: 70%;
+        // margin-left: 2rem;
+        padding-left: 2rem;
+        text-decoration: none;
+        &:first-child {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            &:before {
+                content: '最新公告：\00a0\00a0';
+                color: #aaa;
+            }
+        }
+        @include media-breakpoint-down(sm) {
+            padding-left: 1rem;
+        }
+        span {
+            color: #999;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
+        }
+
+        &.more {
+            width: 30%;
+            text-align: right;
+            // margin-right: 2rem;
+            padding-right: 2rem;
+            color: #ff9900;
+        }
+    }
+}
+
+// 产品列表
+
+.product {
+    width: 90%;
+    margin: 2rem auto;
+    font-size: 1.4rem;
+    background-color: #f5f9fa;
+    border-top: 2px solid #ff9900;
+    box-shadow:  0 0 4px #ccc;
+
+    h2 {
+        float: left;
+        width: 20%;
+        margin-top: 3rem;
+        text-align: center;
+        font-size: 2.4rem;
+        color: #635c51;
+        @include media-breakpoint-down(md) {
+            float: none;
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+        em {
+            display: block;
+            margin-top: 1rem;
+            font-size: 1.6rem;
+            &:first-child {
+                margin-top: 4rem;
+            }
+            @include media-breakpoint-down(md) {
+                display: inline;
+                margin-top: inherit;
+                font-size: 1.2rem;
+            }
+            @include media-breakpoint-down(sm) {
+                &:first-child::before {
+                    content: " ";
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .product-content {
+        float: right;
+        width: 80%;
+        border-left: 1px solid #eee;
+        background-color: #fff;
+        @include media-breakpoint-down(md) {
+            float: none;
+            width: auto;
+        }
+        .item {
+            width: 100%;
+            &+.item {
+                border-top: 1px solid #eee;
+            }
+            h3 {
+                float: left;
+                width: 30%;
+                margin: 1.5rem 0;
+                font-size: 1.4rem;
+                font-weight: normal;
+                text-align: center;
+                @include media-breakpoint-down(md) {
+                    margin-bottom: 0;
+                }
+                em {
+                    margin-right: 0.3rem;
+                    font-size: 3.6rem;
+                    font-size: normal;
+                    color: #8b999d;
+                    @include media-breakpoint-down(md) {
+                        font-size: 2.4rem;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        font-size: 2rem;
+                        margin-right: 0;
+                    }
+                }
+                i {
+                    display: block;
+                    font-size: 1.2rem;
+                    font-style: normal;
+                    color: #999;
+                }
+            }
+
+            .info {
+                float: left;
+                width: 48%;
+                padding: 1.8rem 1rem;
+                border-left: 1px solid #eee;
+                border-right: 1px solid #eee;
+                font-size: 1.4rem;
+                @include media-breakpoint-down(md) {
+                    padding: 1rem 1rem 0;
+                    font-size: 1.2rem;
+                }
+                @include media-breakpoint-down(sm) {
+                    float: right;
+                    width: 70%;
+                    padding: 1rem 0;
+                    border: 0;
+                }
+                p {
+                    float: left;
+                    display: inline-block;
+                    text-align: center;
+                    width: 56%;
+                    &:first-child {
+                        width: 44%;
+                    }
+                    span {
+                        display: block;
+                        font-size: 2.4rem;
+                        color: #ff9900;
+                        @include media-breakpoint-down(md) {
+                            font-size: 2rem;
+                        }
+                        @include media-breakpoint-down(sm) {
+                            font-size: 1.8rem;
+                        }
+                        i {
+                            font-size: 1.2rem;
+                            font-style: normal;
+                            color: #999;
+                        }
+                    }
+                }
+            }
+
+            .buy {
+                float: left;
+                width: 22%;
+                padding: 1rem;
+                @include media-breakpoint-down(sm) {
+                    clear: both;
+                    width: 100%;
+                    float: none;
+                    padding: 1rem 0 2rem;
+                }
+                a {
+                    display: block;
+                    width: 90%;
+                    margin: 1.5rem auto;
+                    max-width: 12rem;
+                    line-height: 3rem;
+                    text-align: center;
+                    text-decoration: none;
+                    color: #fff;
+                    background-color: #ff9900;
+                    border-radius: 5px;
+                    &:active,&:hover {
+                        background-color: #ffc468;
+
+                    }
+                    &.disabled {
+                        background-color: #ccc !important;
+                        cursor: not-allowed;
+                    }
+                    @include media-breakpoint-down(md) {
+                        margin: 0.5rem auto;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        margin-top: 0;
+                        max-width: 26rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 底端
+
+.footer {
+    padding: 3rem 0;
+    background-color: #fff;
+    border-top: 2px solid #eee;
+    .footer-content {
+        width: 90%;
+        margin: 0 auto;
+        @include media-breakpoint-down(sm) {
+            width: 98%;
+        }
+        .brand {
+            float: left;
+            display: block;
+            filter: grayscale(100%);
+            width: 20%;
+            height: 35px;
+            background: url('../../images/logo@1x.png') no-repeat left;
+            background-size: 150px 35px;
+            @include media-breakpoint-down(md) {
+                display: none;
+            }
+        }
+        ul {
+            float: left;
+            margin: 0 auto;
+            width: 16%;
+            @include media-breakpoint-down(md) {
+                width: 20%;
+            }
+            li {
+                font-size: 1.4rem;
+                line-height: 2.4rem;
+                @include media-breakpoint-down(md) {
+                    font-size: 1.2rem;
+                    line-height: 2rem;
+                }
+                .title {
+                    font-size: 1.6rem;
+                    line-height: 3rem;
+                    @include media-breakpoint-down(md) {
+                        font-size: 1.4rem;
+                        line-height: 2.5rem;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        font-size: 1.2rem;
+                        line-height: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+

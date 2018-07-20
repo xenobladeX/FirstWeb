@@ -1,4 +1,5 @@
 @import 'bootstrap/bootstrap-reboot.scss';
+@import 'bootstrap/print.scss';
 
 // 通用样式
 
@@ -107,3 +108,6 @@ a:hover, a:active {
     color: #0ae;
     text-decoration: underline;
 }
+
+// 打印样式
+

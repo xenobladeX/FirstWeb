@@ -13,6 +13,9 @@ header {
         border-bottom: 1px #ecc000 solid;
         .tel {
             float: left;
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
         }
         ul {
             text-align: right;
@@ -25,7 +28,16 @@ header {
                 a {
                     display: inline-block;
                     padding: 0 1.5rem;
+                    @include media-breakpoint-down(md) {
+                        padding: 0 1rem;
+                    }
                     color: #fff;
+                }
+
+                @include media-breakpoint-down(sm) {
+                    &:nth-child(3),&:nth-child(4) {
+                        display: none;
+                    }
                 }
             }
         }
@@ -36,12 +48,31 @@ header {
         .brand {
             float: left;
             padding: 1rem 1.5rem;
+            @include media-breakpoint-down(md) {
+                float: none;
+                display: block;
+                padding: 0;
+                margin: 1.5rem auto 0.5rem;
+                text-align: center;
+            }
         }
         ul {
             text-align: right;
+            @include media-breakpoint-down(md) {
+                text-align: center;
+            }
             li {
                 display: inline-block;
                 border-left: 1px solid #f0ede9;
+                @include media-breakpoint-down(md) {
+                    border-left: none;
+                }
+
+                @include media-breakpoint-down(sm) {
+                    &:first-child {
+                        display: none;
+                    }
+                }
                 a {
                     display: inline-block;
                     padding: 0 3rem;
@@ -54,6 +85,9 @@ header {
                     &:active {
                         color: #ffb300;
                         background-color: #f8f6f1;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        padding: 0 1.5rem;
                     }
                 }
             }
