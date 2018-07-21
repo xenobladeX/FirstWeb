@@ -1,6 +1,15 @@
 
 import './index.scss';
 
-$(document).ready(function () {
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
+import 'owl.carousel';
 
-});
+$(document).ready(function(){
+    $('.owl-carousel').owlCarousel({
+        items: 1,
+        loop: true,
+        autoplay: true,
+        autoplayHoverPause: true,
+    });
+  });
