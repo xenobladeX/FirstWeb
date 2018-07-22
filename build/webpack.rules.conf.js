@@ -48,19 +48,26 @@ const rules = [{
 				// 图片文件输出的文件夹
 				outputPath: "images"
 			}
+		},{
+			loader: "image-webpack-loader",
+			options: {
+
+			}
 		}]
 	}, 
-	 {
+	{
 	 	test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
 	 	loader: 'url-loader',
 	 	options: {
 	 		limit: 10000,
-	 	}
-	 },
+		 }
+	},
 	{
-		test: /\.html$/,
-		// html中的img标签
-		use: ["html-withimg-loader"]
+		test: /\.html/,
+		loader: 'html-loader',
+		options: {
+		  attrs: ['img:src', 'source:srcset']
+		}
 	},
 ];
 module.exports = rules;

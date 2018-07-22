@@ -13,6 +13,7 @@
     "dependencies": {
         "jquery": "^3.3.1",
         "owl.carousel": "^2.3.4",
+        "picturefill": "^3.0.2",
         "popper.js": "^1.14.3"
     },
     "devDependencies": {
@@ -29,8 +30,9 @@
         "extract-text-webpack-plugin": "^4.0.0-beta.0",
         "file-loader": "^1.1.11",
         "glob": "^7.1.2",
+        "html-loader": "^0.5.5",
         "html-webpack-plugin": "^3.2.0",
-        "html-withimg-loader": "^0.1.16",
+        "image-webpack-loader": "^4.3.1",
         "live-server": "^1.2.0",
         "node-sass": "^4.9.2",
         "optimize-css-assets-webpack-plugin": "^4.0.3",
