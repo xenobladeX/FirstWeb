@@ -156,76 +156,6 @@ main {
                 width: 100%;
                 >.item {
                     border: 1px solid rgba(178, 186, 194, .15);
-                    .entry {
-                        .entry-link {
-                            &:hover {
-                                text-decoration: none;
-                            }
-                            .content-box {
-                                display: flex;
-                                align-items: center;
-                                padding: 1.167rem 2rem;
-                                min-height: 5.75rem;
-                                color: #8f969c;
-                                .info-box {
-                                    flex: 1 1 auto;
-                                    flex-direction: column;
-                                    .title-row {
-                                        margin: .5rem 0 .8rem;
-                                        white-space: nowrap;
-                                        overflow: hidden;
-                                        text-overflow: ellipsis;
-                                        a {
-                                            color: #2e3135;
-                                            font-size: 1.7rem;
-                                            font-weight: 600;
-                                            line-height: 1.2;
-                                            &:visited {
-                                                color: #909090;
-                                            }
-                                        }
-                                    }
-                                    .meta-list {
-                                        display: flex;
-                                        align-items: baseline;
-                                        white-space: nowrap;
-                                        .item {
-                                            &:nth-child(2),
-                                            &:nth-child(3) {
-                                                &::after {
-                                                    content: "\B7";
-                                                    margin: 0 .4em;
-                                                    color: #8f969c;
-                                                }
-                                            }
-                                            .category-title {
-                                                display: inline-block;
-                                                margin-right: 1.2rem;
-                                                padding: .38rem 0;
-                                                min-width: 4.5rem;
-                                                text-align: center;
-                                                line-height: 1;
-                                                color: #fff;
-                                                border-radius: 2px;
-                                                &.backend {
-                                                    background-color: #857dea;
-                                                }
-                                            }
-
-                                        }
-                                    }
-                                }
-                                .thumb {
-                                    flex: 0 0 auto;
-                                    width: 8.9rem;
-                                    height: 5.75rem;
-                                    margin-left: 2rem;
-                                    background-color: #fff;
-                                    border-radius: 2px;
-                                }
-                            }
-                        }
-                    }
                 }
             }
         }
@@ -236,6 +166,96 @@ main {
             @include media-breakpoint-down(md) {
                 display: none;
             }
+        }
+    }
+}
+
+.entry {
+    .entry-link {
+        &:hover {
+            text-decoration: none;
+        }
+        .content-box {
+            display: flex;
+            align-items: center;
+            padding: 1.167rem 2rem;
+            min-height: 5.75rem;
+            color: #8f969c;
+            .info-box {
+                flex: 1 1 auto;
+                flex-direction: column;
+                .title-row {
+                    margin: .5rem 0 .8rem;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    a {
+                        color: #2e3135;
+                        font-size: 1.7rem;
+                        font-weight: 600;
+                        line-height: 1.2;
+                        &:visited {
+                            color: #909090;
+                        }
+                    }
+                }
+                .meta-list {
+                    display: flex;
+                    align-items: baseline;
+                    white-space: nowrap;
+                    .item {
+                        &:nth-child(2),
+                        &:nth-child(3) {
+                            &::after {
+                                content: "\B7";
+                                margin: 0 .4em;
+                                color: #8f969c;
+                            }
+                        }
+                        .category-title {
+                            display: inline-block;
+                            margin-right: 1.2rem;
+                            padding: .38rem 0;
+                            min-width: 4.5rem;
+                            text-align: center;
+                            line-height: 1;
+                            color: #fff;
+                            border-radius: 2px;
+                            &.backend {
+                                background-color: #857dea;
+                            }
+                        }
+
+                    }
+                }
+            }
+            .thumb {
+                flex: 0 0 auto;
+                width: 8.9rem;
+                height: 5.75rem;
+                margin-left: 2rem;
+                background-color: #fff;
+                border-radius: 2px;
+            }
+        }
+    }
+}
+
+.user-tooltip {
+    padding: 1.333rem 1.333rem 1.833rem;
+    font-weight: 400;
+    line-height: 1.2;
+    background-color: #fff;
+    .info-row {
+        display: flex;
+        img {
+            flex: 0 0 auto;
+            margin-right: 1rem;
+            width: 4.833rem;
+            height: 4.833rem;
+            border-radius: 50%;
+            border: 1px solid #fff;
+            box-shadow: 0 2px 6px 0 rgba(0,0,0, .15);
         }
     }
 }

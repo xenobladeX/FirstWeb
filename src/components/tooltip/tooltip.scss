@@ -87,5 +87,7 @@
             margin-right: 0;
         }
     }
-    .tooltip-inner {}
+    .tooltip-inner {
+        cursor: default;
+    }
 }

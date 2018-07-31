@@ -22,20 +22,14 @@ $(document).ready(function () {
     // }).done();
     $('.meta-list .username [data-toggle="tooltip"]').each(function () {
         let target = $(this).attr('data-target');
-        let tooltip = $(this).find( target ? target : '.tooltip');
-        // tooltip.detach();
-        new Tooltip($(this), {
+        let tooltip = $(this).find( target ? target : '.tooltip-content');
+        tooltip.detach();
+        tooltip.css('display', 'block');
+        const instance = new Tooltip($(this), {
             container: document.getElementsByClassName('meta-list')[0],
-            title: tooltip.html(),
+            title: tooltip.prop('outerHTML'),
             html: true
         });
+        // instance.show();
     });
-
-    // $('.meta-list .username [data-toggle="tooltip"]').each(function() {
-    //     $(this).tooltip({
-    //         placement: 'bottom',
-    //         title: $('.meta-list .number'),
-    //         html: true
-    //     });
-    // });
 });
