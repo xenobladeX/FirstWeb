@@ -9,11 +9,12 @@ import 'owl.carousel';
 import 'picturefill';
 
 $(document).ready(function(){
-    
+
     $('.owl-carousel').owlCarousel({
         items: 1,
         loop: true,
         autoplay: true,
         autoplayHoverPause: true,
     });
+
   });
