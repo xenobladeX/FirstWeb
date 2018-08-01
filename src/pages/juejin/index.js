@@ -27,29 +27,23 @@ $(document).ready(function () {
     //         });
     //     }
 
-    // }).done();
-
+	// }).done();
+	function bindUserTooltip() {
+		const instance = new Tooltip($(`#${this.objectId} .username [data-toggle="tooltip"]`), {
+			title: userTooltipTemplate.render(this.user),
+			html: true,
+			boundariesElement: document.getElementsByClassName('entry-list')[0]
+		});
+	};
 
 
     // 模板渲染
     let entryListTemplate = $.templates(entry_list_template);
     let userTooltipTemplate = $.templates(user_tooltip_template);
     entryListTemplate.link('#entry-list', recommendedData);
-    $(recommendedData.d).each(function(index, entry) {
-        // $.tmpl('entry-template', entry).appendTo('.entry-list');
-        // let html = entryListTemplate.render(entry)
-        // let jqDom = $.parseHTML(html);
-        console.log(entry);
-    });
 
     // 添加user-tooltip
-    $('#entry-list .username [data-toggle="tooltip"]').each(function () {
-        const instance = new Tooltip($(this), {
-            title: 'tooltip',
-            html: true,
-            boundariesElement: document.getElementsByClassName('entry-list')[0]
-        });
-    });
+    $(recommendedData.d).each(bindUserTooltip);
 
     setTimeout(() => {
         $.observable(recommendedData.d).insert({
@@ -70,7 +64,7 @@ $(document).ready(function () {
                 "name": "Android",
                 "ngxCachedTime": 1533098573
             },
-            "objectId": "5b5fd2135188251aaa2d426c",
+            "objectId": "5b5fd2135188251aaa2d426d",
             "subscribersCount": 0,
             "ngxCachedTime": 1533098622,
             "verifyStatus": true,
@@ -140,8 +134,10 @@ $(document).ready(function () {
         });
     }, 3000);
 
-    $([recommendedData.d]).on('arrayChange', function() {
-        console.log(this);
+    $.observe(recommendedData.d, function(event, eventArg) {
+		if(eventArg.change === 'insert') {
+			$(eventArg.items).each(bindUserTooltip);
+		}
     });
 });
 
