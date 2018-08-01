@@ -26,10 +26,11 @@ $(document).ready(function () {
         tooltip.detach();
         tooltip.css('display', 'block');
         const instance = new Tooltip($(this), {
+            placement: 'bottom',
             container: document.getElementsByClassName('meta-list')[0],
             title: tooltip.prop('outerHTML'),
             html: true
         });
-        // instance.show();
+        instance.show();
     });
 });
