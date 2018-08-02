@@ -1,4 +1,1 @@
-# Getting-start-jQuery
-
->> jQuery练习
-
+# 前端无框架项目练习（一）- 理财网站
