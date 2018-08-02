@@ -19,18 +19,6 @@ const webpackConfigDev = {
         // open: true, // 开启浏览器
         // stats: "errors-only", //stats: "errors-only"表示只打印错误：
         hot: true, // 开启热更新
-        proxy: {
-            "/v1/gen_suid": {
-                target: "https://suid-generator-api-ms.juejin.im",
-                changeOrigin: true,
-                secure: false
-            },
-            "/v1/get_recommended_entry": {
-                target: "https://recommender-api-ms.juejin.im",
-                changeOrigin: true,
-                secure: false
-            }
-        }
     },
     plugins: [
         //热更新
